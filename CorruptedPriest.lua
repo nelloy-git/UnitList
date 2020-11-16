@@ -36,7 +36,7 @@ local CorruptedPriest = {}
 ---@param owner player
 ---@return Unit
 function CorruptedPriest.new(x, y, owner)
-    local unit = Unit.new(CorruptedPriest.Type:getId(), x, y, owner)
+    local unit = Unit.new(CorruptedPriest.Binary:getId(), x, y, owner)
     --BuffLib.Container.new(unit)
 
     -- Params
