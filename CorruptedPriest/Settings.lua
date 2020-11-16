@@ -2,14 +2,15 @@
 -- Include
 --=========
 
----@type BinaryLib
-local BinaryLib = require(LibList.BinaryLib) or error('')
----@type ParameterLib
-local ParamLib = require(LibList.ParameterLib) or error('')
-local ParamType = ParamLib.ParamType or error('')
----@type UtilsLib
-local UtilsLib = require(LibList.UtilsLib) or error('')
-local id2int = UtilsLib.id2int or error('')
+---@type Wc3Binary
+local Wc3Binary = LibManager.getDepency('Wc3Binary')
+local getFreeId = Wc3Binary.getUnitId
+---@type Wc3Parameter
+local Wc3Parameter = LibManager.getDepency('Wc3Parameter')
+local ParamType = Wc3Parameter.Type.enum
+---@type Wc3Utils
+local Wc3Utils = LibManager.getDepency('Wc3Utils')
+local id2int = Wc3Utils.id2int
 
 --========
 -- Module
@@ -20,7 +21,7 @@ local Settings = {}
 
 Settings.Name = 'Corrupted priest'
 Settings.BaseId = id2int('Hpal')
-Settings.Id = BinaryLib.getUnitId()
+Settings.Id = getFreeId()
 Settings.Icon = Macro('ReplaceableTextures\\\\CommandButtons\\\\BTNPriest.blp')
 
 ----------------
